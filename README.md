@@ -1,1 +1,1 @@
-# Smatphones
+# Smartphones
