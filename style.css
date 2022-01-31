@@ -1,0 +1,234 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400;1,500&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.js');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* Criei variáveis para modificar as fontes em um lugar só */
+:root{
+    --font-primary: "Baloo Da 2", serif;
+    --front-secundary:"Josefin Slab", serif;
+    --font-action:"Mulish", serif;
+}
+
+.cabecalho{
+    margin-top: 0;
+    width: 100%;
+    height: 9rem;
+    position: fixed;
+    background-color: rgba(8, 8, 8, 0.925);
+}
+
+
+
+.hamburguer{
+    /*  background-color: red; */
+      width: 2rem;
+      height: 2rem;
+      position: fixed;
+      z-index: 100;
+      left: 2rem;
+      top:6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      cursor: pointer;
+  }
+  
+  
+
+
+.show-menu .hamburguer{
+    left: 16rem;
+
+
+}
+
+
+
+
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px rgb(0, 0, 0);
+    transition: all 1s;
+   
+  
+
+}
+
+/* Faz a animação do icone hamburguer*/
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem,.45rem);
+    
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.2rem,-.45rem);
+    
+}
+.hamburguer span{
+position: absolute;
+left:  3rem;
+height: 2rem;
+width: 6rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(243, 227, 227, 0.979);
+font-family: var(--font-action);
+opacity: 0;
+
+}
+
+/*Antes do span usa a setinha */
+.hamburguer span::before{
+
+    content:"" ;
+    position: absolute;
+    border-right: .5rem solid rgba(243, 227, 227, 0.979);
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .hamburguer:hover span{
+opacity: 1;
+
+}
+
+
+
+
+.container-logo{
+
+    width: 5rem;
+    height: 5rem;
+    margin-top: 2rem;
+
+  
+}
+
+
+.show-menu .sidebar{
+    left: 0;
+
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: rgba(247, 245, 245, 0.801);
+    position: fixed;
+    top: 0;
+    left: -20rem;
+    transition: all 1s;
+    z-index: 99; /* Ao abrir o menu a imagem fica por baixo */
+
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item{
+    text-align: center ;
+    margin-bottom: .3rem;
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 1.5rem;
+    color: rgba(58, 56, 56, 0.979);
+
+}
+
+.menu-link:hover{
+    color: rgba(143, 140, 140, 0.7);
+    transition: color 1s;
+}
+
+
+
+.container-logo h1{
+
+    width: 5rem;
+    height: 5rem;
+    position: fixed;
+    left: 6rem;
+    margin-top: 0.5rem;
+    color: rgb(253, 251, 251);
+}
+
+
+.container-logo img{
+
+    left: 12rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    position: fixed;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+
+}
+
+.container-icones{
+
+    width: 11.5rem;
+    height: 5rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-right: 3rem ;
+    margin-top: 2rem;
+}
+
+/* ícones dentro do container */
+.fa.fa-user-circle{
+
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    color: rgb(253, 251, 251);
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+}
+
+#carrinho{
+
+    width: 3.5rem;
+    height: 3.5rem;
+    position: fixed;
+    border-radius: 3rem;
+    margin-top: 0.9rem;
+    
+}
+
+.fa.fa-shopping-cart{
+
+    
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    color: rgb(248, 222, 222);
+}
